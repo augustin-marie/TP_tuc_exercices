@@ -15,23 +15,18 @@ jobs:
       - name: Install requirements
         run: |
           python -m pip install -r requirements.txt
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-
       - name: Analysing the code with pylint
         run: |
           pylint --fail-under=5 $(git ls-files '*.py')
-
       - name: Run the tests with pytest
         run: |
           coverage run -m pytest --profile
-
       - name: Report the coverage
         run: |
           python -m coverage report
-
       - name: Uses locust to test the app
         run: |
           uvicorn application.main:app &
