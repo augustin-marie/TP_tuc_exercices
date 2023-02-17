@@ -4,7 +4,6 @@ from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-driver = webdriver.Chrome(options=chrome_options)
 
 #def get_roulette_title():
 #    driver.get("https://wikiroulette.co/")
@@ -14,14 +13,18 @@ driver = webdriver.Chrome(options=chrome_options)
 #    return title
 
 def get_website_title(website):
+    driver = webdriver.Chrome(options=chrome_options)
+    return_value = ''
     try:
         driver.get(website)
         page_title = driver.title
         print(page_title)
-        return page_title
+        return_value = page_title
     except:
         print('se site n\'existe pas !')
-        return ''
+    finally:
+        driver.close()
+        return return_value
 
 if __name__ == '__main__':
-    driver.get_website_title("https://www.reddit.com/")
+    get_website_title("https://www.reddit.com/")
