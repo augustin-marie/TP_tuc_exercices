@@ -35,4 +35,4 @@ jobs:
       - name: Uses locust to test the app
         run: |
           uvicorn application.main:app &
-          locust --config=.locust.conf
+          locust --config=tests/.locust.conf --locustfile=tests/locustfile.py --headless
