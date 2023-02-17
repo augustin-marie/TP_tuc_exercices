@@ -34,7 +34,7 @@ jobs:
 
       - name: Launch the app
         run: |
-          uvicorn application.main:app -S uvicorn-terminal
+          uvicorn application.main:app &
 
       - name: Test the app with locust
         run: |
