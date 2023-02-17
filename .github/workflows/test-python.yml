@@ -33,3 +33,11 @@ jobs:
       - name: Report the coverage
         run: |
           python -m coverage report
+
+      - name: Launch the app
+        run: |
+          uvicorn main:app --reload
+
+      - name: Test the app with locust
+        run: |
+          locust --config=.locust.conf
