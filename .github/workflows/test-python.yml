@@ -29,3 +29,7 @@ jobs:
       - name: Run the tests with pytest
         run: |
           coverage run -m pytest --profile
+
+      - name: Report the coverage
+        run: |
+          python -m coverage report
