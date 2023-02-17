@@ -3,7 +3,6 @@ from application.main import app, return_square
 
 client = TestClient(app)
 
-
 def test_return_square(mocker):
     mocker.patch(
         "application.main.get_square",
