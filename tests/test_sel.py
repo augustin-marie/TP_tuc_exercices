@@ -1,5 +1,5 @@
 import pytest
-from selDriver import Sel_driver
+from application.selDriver import Sel_driver
 
 driver = Sel_driver()
 """
