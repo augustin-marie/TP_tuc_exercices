@@ -4,7 +4,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-class SelDriver:
+class Sel_driver:
     """
         Selenium handler
     """
@@ -29,7 +29,7 @@ class SelDriver:
             self.driver.get(website)
             page_title = self.driver.title
             print(page_title)
-            return (page_title)
+            return page_title
         except:
             print('se site n\'existe pas !')
             return ''

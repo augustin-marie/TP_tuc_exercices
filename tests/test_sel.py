@@ -1,7 +1,7 @@
 import pytest
-from selDriver import SelDriver
+from selDriver import Sel_driver
 
-driver = SelDriver()
+driver = Sel_driver()
 """
 def test_get_roulette_title():
     result = driver.get_roulette_title()
